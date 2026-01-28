@@ -22,6 +22,7 @@ function longest_sequence(nums) {
 }
 
 
-const list=[100, 4, 200, 1, 3, 2]
+const list=[2,3,4,5,6,7,8,9,0,1,100,99,98,97]
+// const list=[100, 4, 200, 1, 3, 2]
 
 console.log(longest_sequence(list))

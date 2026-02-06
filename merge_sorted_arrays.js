@@ -12,8 +12,8 @@ while(i<arr.length && j<arr2.length){
         j++;
     }   
  
-    while (i < arr1.length) {
-        mergedArray.push(arr1[i]);
+    while (i < arr.length) {
+        mergedArray.push(arr[i]);
         i++;
     } 
     while (j < arr2.length) {

@@ -1,38 +1,68 @@
-//my solution
-function longestSubstring(str) {
-    let substrings = []
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i; j < str.length; j++) {
-            let tempStr = str.slice(i, j + 1)
+// //my solution
+// function longestSubstring(str) {
+//     let substrings = []
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = i; j < str.length; j++) {
+//             let tempStr = str.slice(i, j + 1)
 
-            substrings.push(tempStr)
-        }
-    }
+//             substrings.push(tempStr)
+//         }
+//     }
 
-    return getMaxSubstring(substrings)
-}
-function getMaxSubstring(arr) { 
-    let longestStr = ''
+//     return getMaxSubstring(substrings)
+// }
+// function getMaxSubstring(arr) { 
+//     let longestStr = ''
 
-    for (let i = 0; i < arr.length; i++) {
-        tempStr = ''
-        for (let j = 0; j < arr[i].length; j++) {
+//     for (let i = 0; i < arr.length; i++) {
+//         tempStr = ''
+//         for (let j = 0; j < arr[i].length; j++) {
 
-            if (tempStr.includes(arr[i][j])) {
-                break; 
-            } else {
-                tempStr += arr[i][j]  
+//             if (tempStr.includes(arr[i][j])) {
+//                 break; 
+//             } else {
+//                 tempStr += arr[i][j]  
+//             }
+//         }
+//         if (tempStr.length > longestStr.length) {
+//             longestStr = tempStr;
+
+//         }
+
+//     }
+// return longestStr;
+// }
+
+
+// let str = "abcabcbb";
+// console.log(longestSubstring(str))
+
+
+function longestSubstring(str){
+    let left=0
+    let longestStr=''; 
+    let right =0;
+    let tempStr=''
+    while(right<str.length){
+   
+        if(str[left]!==str[right]){ 
+            tempStr=tempStr+str[right];
+            right++;
+        }else if(str[left]===str[right]){
+            if(tempStr.length>longestStr.length){
+                longestStr=tempStr;
+                tempStr=''
             }
+            right=left;
+            left++;
+          
+        
         }
-        if (tempStr.length > longestStr.length) {
-            longestStr = tempStr;
 
-        }
-
+        
     }
-return longestStr;
+    return longestStr
 }
 
-
-let str = "abcabcbb";
+let str="abcabcbb";
 console.log(longestSubstring(str))

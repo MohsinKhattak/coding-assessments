@@ -17,9 +17,6 @@ function arrayIntersection(arr1, arr2) {
         second_array_index=0;
     }
 
-
-
-
     return result
 }
 

@@ -32,14 +32,34 @@
            current=current.next
         }
         console.log(list.join('->'))
+        return
     }
+
+    reverse(){
+        let prev = null;
+        let current = this.head;
+        let next = null;
+
+        while (current !== null) {
+            next = current.next;   
+            current.next = prev;   
+            prev = current;
+            current = next;
+        }
+
+        this.head = prev;
+    } 
  }
 
 
  let lnkedlist=new LinkedList();
 
- lnkedlist.append(1);
- lnkedlist.append(2);
- lnkedlist.append(3);
- lnkedlist.append(4);
+lnkedlist.append(1);
+lnkedlist.append(2);
+lnkedlist.append(3);
+lnkedlist.append(4);
+
+lnkedlist.display()
+
+lnkedlist.reverse() 
 lnkedlist.display()

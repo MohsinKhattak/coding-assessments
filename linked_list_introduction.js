@@ -48,6 +48,21 @@
         }
         this.head=prev;
     }
+
+    isCycle(){
+       let slow=this.head;
+       let fast=this.head;
+
+       while(slow!==null && fast!==null){
+        slow=slow.next;
+        fast=fast.next.next;
+
+
+        if(slow===fast){
+            return true
+        }
+        return false;
+       }}
  }
 
 
@@ -57,8 +72,4 @@ lnkedlist.append(1);
 lnkedlist.append(2);
 lnkedlist.append(3);
 lnkedlist.append(4);
-
-lnkedlist.display()
-
-lnkedlist.reverse() 
-lnkedlist.display()
+console.log(lnkedlist.isCycle())
